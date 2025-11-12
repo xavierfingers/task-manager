@@ -1,0 +1,26 @@
+<html>
+  <body>
+     <title>New task</title>
+    <h1> Create a new task. </h1>
+    <input id="task">
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script>
+      function newTask() {
+        const task = $('#task').value;
+        $.ajax({
+          url: "https://httpbun.com/post",
+          method: "POST",
+          data: task,
+          success: function main() {
+             alert("Successfully created task."); 
+               $(window).location.href = "index.html";
+         },
+       error: function main() {
+          alert("An error happened.");
+      }
+   });
+}
+</script>
+	<button onclick="newTask()">Save</button>
+  </body>
+</html>
