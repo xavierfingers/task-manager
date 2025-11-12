@@ -20,8 +20,10 @@
       }
    });
 }
-const html = "<p>" + task + "<p>";
- $('h5').html(html);
+$(document).ready(function() {
+let html = "<p>" + task + "<p>";
+  $('h5').html(html);
+});
 </script>
         <h5></h5>
 	<button onclick="newTask()">Save</button>
